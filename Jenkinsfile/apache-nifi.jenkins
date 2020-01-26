@@ -19,6 +19,6 @@ pipeline {
                 	sh 'docker build german/apache-nifi:latest . '
                 }
             }
-        }        
+        }
     }
 }
