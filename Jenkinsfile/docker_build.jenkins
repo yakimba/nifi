@@ -25,7 +25,7 @@ pipeline {
         stage("create docker image") {
             steps {
                 echo " ============== start building image =================="
-                dir ('Docker') {
+                dir ('nifi-docker/dockerhub') {
                 	sh 'docker build -t germansnow/toolbox:latest . '
                 }
             }
