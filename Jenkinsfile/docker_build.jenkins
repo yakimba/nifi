@@ -26,7 +26,7 @@ pipeline {
             steps {
                 echo " ============== start building image =================="
                 dir ('nifi-docker/dockerhub') {
-                	sh 'docker build -t germansnow/toolbox:latest . '
+                	sh 'DockerBuild.sh'
                 }
             }
         }
