@@ -12,14 +12,23 @@ pipeline {
         timestamps()
     }
     stages {
-
-        stage("create docker image") {
+       stage("create docker image") {
             steps {
                 echo " ============== start building image =================="
                 dir ('nifi-docker/dockerhub') {
                 	sh """
                 	./DockerBuild.sh
                 	"""
+                }
+            }
+        }
+        stage("docker run") {
+            steps {
+                echo " ============== docker run =================="
+                dir ('nifi-docker/dockerhub') {
+                    sh """
+                    ./DockerRun.sh
+                    """
                 }
             }
         }
